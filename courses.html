@@ -21,6 +21,21 @@
         .section-padding {
             padding: 80px 0; /* Consistent padding for sections */
         }
+        .category-heading {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #4338ca; /* indigo-700 */
+            border-bottom: 2px solid #a5b4fc; /* indigo-200 */
+            padding-bottom: 10px;
+        }
+        @media (min-width: 768px) {
+            .category-heading {
+                margin-top: 60px;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -29,7 +44,7 @@
     <header class="bg-white shadow-md fixed w-full z-50 top-0">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">
-                <a href="index.html">연구실</a>
+                <a href="index.html">INRS</a>
             </div>
             <ul class="flex space-x-6">
                 <li><a href="intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">인사말</a></li>
@@ -50,32 +65,114 @@
         <section id="courses" class="section-padding bg-white shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">개설 수업</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Course Card 1 -->
+
+                <!-- 학부 수업 (Undergraduate Courses) -->
+                <h3 class="category-heading">학부 수업</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Course Card 1: 방사선공학개론 -->
                     <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">고급 머신러닝</h3>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">방사선공학개론</h3>
                         <p class="text-gray-600 mb-4">
-                            최신 딥러닝 모델과 고급 머신러닝 알고리즘에 대해 심층적으로 학습합니다.
+                            방사선 공학의 기초 개념과 원리를 학습하고, 다양한 응용 분야를 탐구합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 학부생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
+                    <!-- Course Card 2: 방사선보건물리 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">방사선보건물리</h3>
+                        <p class="text-gray-600 mb-4">
+                            방사선이 인체에 미치는 영향과 방사선 방호 및 안전 관리 원칙을 배웁니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 학부생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
+                    <!-- Course Card 3: 공학미분방정식 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">공학미분방정식</h3>
+                        <p class="text-gray-600 mb-4">
+                            공학 문제 해결에 필요한 미분방정식의 이론과 다양한 해법을 학습합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 학부생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
+                    <!-- Course Card 4: 선형대수학 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">선형대수학</h3>
+                        <p class="text-gray-600 mb-4">
+                            선형 시스템, 벡터 공간, 행렬 등 선형대수학의 기본 개념과 응용을 다룹니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 학부생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
+                    <!-- Course Card 5: 제품개발설계 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">제품개발설계</h3>
+                        <p class="text-gray-600 mb-4">
+                            제품 개발의 전반적인 과정과 설계 방법론에 대해 학습하고 실습합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 학부생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 대학원 수업 (Graduate Courses) -->
+                <h3 class="category-heading">대학원 수업</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course Card 1: 방사선공학 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">방사선공학</h3>
+                        <p class="text-gray-600 mb-4">
+                            방사선 발생, 상호작용, 측정 및 응용에 대한 심화된 공학적 지식을 다룹니다.
                         </p>
                         <ul class="list-disc list-inside text-gray-600 ml-4">
                             <li>대상: 대학원생</li>
                             <li>학점: 3학점</li>
-                            <li>강의 시간: 화요일 14:00 - 17:00</li>
                         </ul>
                     </div>
-                    <!-- Course Card 2 -->
+                    <!-- Course Card 2: 방사선빔응용공학 -->
                     <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">영상 처리 및 분석 특론</h3>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">방사선빔응용공학</h3>
                         <p class="text-gray-600 mb-4">
-                            다양한 영상 처리 기법과 영상 분석 알고리즘의 이론 및 실제 적용을 다룹니다.
+                            방사선 빔의 생성, 제어 및 다양한 산업, 의료 분야 응용 기술을 학습합니다.
                         </p>
                         <ul class="list-disc list-inside text-gray-600 ml-4">
                             <li>대상: 대학원생</li>
                             <li>학점: 3학점</li>
-                            <li>강의 시간: 목요일 10:00 - 13:00</li>
                         </ul>
                     </div>
-                    <!-- Add more courses as needed -->
+                    <!-- Course Card 3: 방사선영상처리 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">방사선영상처리</h3>
+                        <p class="text-gray-600 mb-4">
+                            방사선 영상을 획득하고 분석, 개선하는 다양한 영상 처리 기법을 심층적으로 다룹니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 대학원생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
+                    <!-- Course Card 4: 방사선물리및방호 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">방사선물리및방호</h3>
+                        <p class="text-gray-600 mb-4">
+                            방사선 물리의 기본 원리와 방사선 방호 및 안전 관리에 대한 전문 지식을 습득합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 ml-4">
+                            <li>대상: 대학원생</li>
+                            <li>학점: 3학점</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
