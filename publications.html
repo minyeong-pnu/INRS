@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구실 홈페이지 - 논문</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for smooth scrolling and font */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+            color: #334155; /* Darker text */
+        }
+        .section-padding {
+            padding: 80px 0; /* Consistent padding for sections */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">
+                <a href="index.html">연구실</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">인사말</a></li>
+                <li><a href="research_list.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구목록</a></li>
+                <li><a href="professor_intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">교수소개</a></li>
+                <li><a href="members.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">구성원</a></li>
+                <li><a href="projects.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">프로젝트</a></li>
+                <li><a href="research_life.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구라이프</a></li>
+                <li><a href="courses.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">수업</a></li>
+                <li><a href="publications.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">논문</a></li>
+                <li><a href="alumni.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">졸업생 현황</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24"> <!-- Adjusted padding-top for fixed header -->
+        <!-- 논문 (Publications) Section -->
+        <section id="publications" class="section-padding bg-gray-50 shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">주요 논문</h2>
+                <div class="space-y-6">
+                    <!-- Publication 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            A Novel Deep Learning Approach for X-ray and Neutron Image Fusion
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="font-medium">저자:</span> 김철수, 이영희, 홍길동
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="font-medium">저널/학회:</span> Journal of Advanced Imaging Technology, Vol. 10, No. 2, pp. 123-130
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">발행년도:</span> 2025
+                        </p>
+                    </div>
+                    <!-- Publication 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            Enhancing Nondestructive Testing with AI-Powered Image Reconstruction
+                        </h3>
+                        <p class="text-gray-700 mb-2">
+                            <span class="font-medium">저자:</span> 박지민, 홍길동
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <span class="font-medium">저널/학회:</span> International Conference on Materials Science, Proceedings, pp. 45-50
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-medium">발행년도:</span> 2024
+                        </p>
+                    </div>
+                    <!-- Add more publications as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-2">&copy; 2025 연구실. All rights reserved.</p>
+            <p class="text-gray-400">문의: lab@example.com | 전화: 051-1234-5678</p>
+        </div>
+    </footer>
+</body>
+</html>

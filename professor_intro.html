@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구실 홈페이지 - 교수소개</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for smooth scrolling and font */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+            color: #334155; /* Darker text */
+        }
+        .section-padding {
+            padding: 80px 0; /* Consistent padding for sections */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">
+                <a href="index.html">연구실</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">인사말</a></li>
+                <li><a href="research_list.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구목록</a></li>
+                <li><a href="professor_intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">교수소개</a></li>
+                <li><a href="members.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">구성원</a></li>
+                <li><a href="projects.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">프로젝트</a></li>
+                <li><a href="research_life.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구라이프</a></li>
+                <li><a href="courses.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">수업</a></li>
+                <li><a href="publications.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">논문</a></li>
+                <li><a href="alumni.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">졸업생 현황</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24"> <!-- Adjusted padding-top for fixed header -->
+        <!-- 교수소개 (Professor Introduction) Section -->
+        <section id="professor-intro" class="section-padding bg-white shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">교수 소개</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <img src="https://placehold.co/400x400/a78bfa/ffffff?text=Professor+Name" alt="교수님 사진" class="rounded-xl shadow-lg mx-auto w-full max-w-xs object-cover border-4 border-indigo-200">
+                    </div>
+                    <div class="md:w-2/3 text-lg leading-relaxed text-gray-700">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-3">홍길동 교수</h3>
+                        <p class="mb-4">
+                            홍길동 교수는 머신러닝 기반 영상 처리 및 비파괴 검사 분야의 전문가입니다.
+                            다년간의 연구 경험과 다양한 프로젝트 참여를 통해 이 분야의 발전에 크게 기여해 왔습니다.
+                        </p>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Experience</h4>
+                        <ul class="list-disc list-inside mb-4 ml-4">
+                            <li>2021.9 ~ present Professor, School of Mechanical Eng., Pusan National University, Busan, Korea</li>
+                            <li>2024.5 ~ present Director, Office for Education Accreditation, Pusan National University, Busan, Korea</li>
+                            <li>2023. 5 ~2023. 6 Visiting scientist, Paul Scherrer Institute, Argau, Switzerland</li>
+                            <li>2020. 3 ~ 2022. 2 Associate Dean(Planning), College of Engineering, Pusan National University, Busan, Korea</li>
+                            <li>2017. 3 ~ 2019. 2 Division Head, Nuclear System Division, School of Mechanical Eng., Pusan National University, Busan, Korea</li>
+                            <li>2016. 9 ~ 2021.8.31 Associate Professor, School of Mechanical Eng., Pusan National University, Busan, Korea</li>
+                            <li>2015. 6-8 & 2018.1-2 Visiting scholar/Consultant, Department of Biomedical Eng., Rensselaer Polytechnique Institute, Troy, NY, USA</li>
+                            <li>2012. 9 ~ 2016. 8 Assistant Professor, School of Mechanical Eng., Pusan National University, Busan, Korea</li>
+                            <li>2006. 7 ~ 2008. 7 Guest Researcher, Ionizing Radiation Division, National Institute of Standards and Technology, Gaithersburg, MD, USA</li>
+                            <li>2004. 6 ~ 2012. 8 Senior Researcher, Neutron Science Division, Korea Atomic Energy Research Institute, Daejeon, Korea</li>
+                            <li>2003. 9 ~ 2004. 6 Post-Doctorial Fellow, Neutron Science Division, Korea Atomic Energy Research Institute, Daejeon, Korea</li>
+                            <li>2002. 1 ~ 2003. 5 Research Assistant, Department of Radiology, University of Iowa Hospitals and Clinics, Iowa City, IA, USA</li>
+                            <li>2000. 7 ~ 2000. 8 Visiting Student, Max Planck Institute for Physics, Munich, Germany</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">Education</h4>
+                        <ul class="list-disc list-inside mb-4 ml-4">
+                            <li>1998. 3 ~ 2003. 8 Ph.D. Dept. of Nuclear and Quantum Eng., KAIST, Daejeon, Korea</li>
+                            <li>1996. 3 ~ 1998. 2 M.S. Dept. of Nuclear and Quantum Eng., KAIST, Daejeon, Korea</li>
+                            <li>1992. 3 ~ 1996. 2 B.S. Dept. of Nuclear and Quantum Eng., KAIST, Daejeon, Korea</li>
+                            <li>1990. 3 ~ 1992. 2 Gyeongnam Science High School, Gyeongnam Province, Korea</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">연구 관심 분야</h4>
+                        <p class="ml-4">X선 및 중성자 영상 융합, 딥러닝 기반 영상 재구성, 비파괴 검사 기술, 재료 과학</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-2">&copy; 2025 연구실. All rights reserved.</p>
+            <p class="text-gray-400">문의: lab@example.com | 전화: 051-1234-5678</p>
+        </div>
+    </footer>
+</body>
+</html>

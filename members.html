@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구실 홈페이지 - 구성원</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for smooth scrolling and font */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+            color: #334155; /* Darker text */
+        }
+        .section-padding {
+            padding: 80px 0; /* Consistent padding for sections */
+        }
+        .category-heading {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #4338ca; /* indigo-700 */
+            border-bottom: 2px solid #a5b4fc; /* indigo-200 */
+            padding-bottom: 10px;
+        }
+        @media (min-width: 768px) {
+            .category-heading {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">
+                <a href="index.html">연구실</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">인사말</a></li>
+                <li><a href="research_list.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구목록</a></li>
+                <li><a href="professor_intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">교수소개</a></li>
+                <li><a href="members.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">구성원</a></li>
+                <li><a href="projects.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">프로젝트</a></li>
+                <li><a href="research_life.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구라이프</a></li>
+                <li><a href="courses.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">수업</a></li>
+                <li><a href="publications.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">논문</a></li>
+                <li><a href="alumni.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">졸업생 현황</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24"> <!-- Adjusted padding-top for fixed header -->
+        <!-- 구성원 (Members) Section -->
+        <section id="members" class="section-padding bg-gray-50 shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">구성원</h2>
+
+                <!-- 박사 후 연구생 (Postdoctoral Researchers) -->
+                <h3 class="category-heading">박사 후 연구생</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Member Card: 김대승 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=김대승" alt="김대승 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">김대승</h3>
+                        <p class="text-gray-600">박사 후 연구생</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Differentiable Forward Modeling for Talbot-Lau Neutron Phase Imaging</p>
+                    </div>
+                </div>
+
+                <!-- 박사과정 (PhD Candidates) -->
+                <h3 class="category-heading">박사과정</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Member Card: 원준혁 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=원준혁" alt="원준혁 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">원준혁</h3>
+                        <p class="text-gray-600">박사과정</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Hybrid Deep Interpolation for Interior Neutron CT Using Radon Domain Priors</p>
+                    </div>
+                    <!-- Member Card: 손준영 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=손준영" alt="손준영 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">손준영</h3>
+                        <p class="text-gray-600">박사과정</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Deep Bragg Edge Profiling for Strain Mapping in Neutron Transmission Imaging</p>
+                    </div>
+                    <!-- Member Card: 허유민 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=허유민" alt="허유민 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">허유민</h3>
+                        <p class="text-gray-600">박사과정</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Learning Phase and Dark-field Signals from Single-Grating Neutron Imaging</p>
+                    </div>
+                    <!-- New Member Card: 이수현 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=이수현" alt="이수현 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">이수현</h3>
+                        <p class="text-gray-600">박사과정</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Deep Temporal Reconstruction of Cardiac CT with Limited Views</p>
+                    </div>
+                </div>
+
+                <!-- 석사과정 (Master's Candidates) -->
+                <h3 class="category-heading">석사과정</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Member Card: 이상호 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=이상호" alt="이상호 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">이상호</h3>
+                        <p class="text-gray-600">석사과정</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Deep Few-View Reconstruction for Time-Constrained Neutron Tomography</p>
+                    </div>
+                </div>
+
+                <!-- 학부 연구생 (Undergraduate Researchers) -->
+                <h3 class="category-heading">학부 연구생</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Member Card: 모장훈 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=모장훈" alt="모장훈 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">모장훈</h3>
+                        <p class="text-gray-600">학부 연구생</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Dual-Modality Image Restoration via Cross-Domain Feature Fusion in Neutron-Xray Imaging</p>
+                    </div>
+                    <!-- Member Card: 조민영 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=조민영" alt="조민영 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">조민영</h3>
+                        <p class="text-gray-600">학부 연구생</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Modality-Aware Deformable Registration for Neutron-Xray Image Alignment</p>
+                    </div>
+                    <!-- Member Card: 하승엽 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=하승엽" alt="하승엽 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">하승엽</h3>
+                        <p class="text-gray-600">학부 연구생</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Multimodal Imaging and Analysis for Heterogeneous Fossil and Battery Samples</p>
+                    </div>
+                    <!-- Member Card: 김관우 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=김관우" alt="김관우 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">김관우</h3>
+                        <p class="text-gray-600">학부 연구생</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Conditional Diffusion Model for Synthetic Neutron-Xray Tomographic Fusion</p>
+                    </div>
+                    <!-- Member Card: 하지연 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200">
+                        <img src="https://placehold.co/150x150/e0e7ff/4338ca?text=하지연" alt="하지연 연구원 사진" class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-indigo-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">하지연</h3>
+                        <p class="text-gray-600">학부 연구생</p>
+                        <p class="text-gray-600 text-sm mt-1">주요 연구: Spectral Phase-Contrast Learning in Multi-Energy X-ray Imaging</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-2">&copy; 2025 연구실. All rights reserved.</p>
+            <p class="text-gray-400">문의: lab@example.com | 전화: 051-1234-5678</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구실 홈페이지 - 메인</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for smooth scrolling and font */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+            color: #334155; /* Darker text */
+        }
+        .section-padding {
+            padding: 80px 0; /* Consistent padding for sections */
+        }
+        .slider-image {
+            transition: opacity 1s ease-in-out;
+        }
+        .hidden-fade {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .visible-fade {
+            opacity: 1;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">
+                <a href="index.html">연구실</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">인사말</a></li>
+                <li><a href="research_list.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구목록</a></li>
+                <li><a href="professor_intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">교수소개</a></li>
+                <li><a href="members.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">구성원</a></li>
+                <li><a href="projects.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">프로젝트</a></li>
+                <li><a href="research_life.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구라이프</a></li>
+                <li><a href="courses.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">수업</a></li>
+                <li><a href="publications.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">논문</a></li>
+                <li><a href="alumni.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">졸업생 현황</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Image Slider -->
+    <section id="home" class="relative w-full h-screen overflow-hidden mt-16">
+        <div id="image-slider" class="absolute inset-0 flex items-center justify-center bg-gray-900">
+            <!-- Images will be dynamically loaded here -->
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-center p-4">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">연구실에 오신 것을 환영합니다</h1>
+                <p class="text-lg md:text-xl font-light mb-8">최첨단 기술과 혁신적인 아이디어로 미래를 탐구합니다.</p>
+                <a href="intro.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">더 알아보기</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="pt-16">
+        <!-- Main content area for index page if needed, otherwise leave empty -->
+        <section class="section-padding bg-white shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8 text-center">
+            <h2 class="text-3xl font-bold text-indigo-800 mb-4">저희 연구실은...</h2>
+            <p class="text-lg text-gray-700">
+                머신러닝을 활용한 X선 및 중성자 영상 융합 연구를 선도하며, 최신 기술과 혁신적인 아이디어로 학문 발전에 기여하고 있습니다.
+                상단 메뉴를 통해 각 연구 분야, 구성원, 프로젝트 등 다양한 정보를 확인하실 수 있습니다.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-2">&copy; 2025 연구실. All rights reserved.</p>
+            <p class="text-gray-400">문의: lab@example.com | 전화: 051-1234-5678</p>
+        </div>
+    </footer>
+
+    <script>
+        // Image Slider Logic
+        const images = [
+            '동백섬덥다.jpg',
+            '엑스더스카이따봉.jpg',
+            '관우따봉.jpg',
+            '회식이다.jpg'
+        ];
+        let currentImageIndex = 0;
+        const imageSlider = document.getElementById('image-slider');
+
+        function updateSliderImage() {
+            // Create a new image element
+            const newImage = document.createElement('img');
+            newImage.src = images[currentImageIndex];
+            newImage.alt = `연구실 이미지 ${currentImageIndex + 1}`;
+            newImage.className = 'slider-image absolute inset-0 w-full h-full object-cover hidden-fade';
+
+            // Append new image and fade it in
+            imageSlider.appendChild(newImage);
+
+            // Remove previous images after transition
+            const oldImages = imageSlider.querySelectorAll('.slider-image');
+            if (oldImages.length > 1) {
+                // Remove all but the last two (current and previous)
+                for (let i = 0; i < oldImages.length - 2; i++) {
+                    imageSlider.removeChild(oldImages[i]);
+                }
+                // Fade out the second to last image (the one that was previously visible)
+                oldImages[oldImages.length - 2].classList.remove('visible-fade');
+                oldImages[oldImages.length - 2].classList.add('hidden-fade');
+            }
+
+            // Make the new image visible
+            setTimeout(() => {
+                newImage.classList.remove('hidden-fade');
+                newImage.classList.add('visible-fade');
+            }, 10); // Small delay to ensure transition applies
+
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        // Initial image load
+        updateSliderImage();
+        // Set interval for automatic slide
+        setInterval(updateSliderImage, 5000); // Change image every 5 seconds
+    </script>
+</body>
+</html>
