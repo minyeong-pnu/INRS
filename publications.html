@@ -21,6 +21,29 @@
         .section-padding {
             padding: 80px 0; /* Consistent padding for sections */
         }
+        .publication-item {
+            background-color: #ffffff;
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            border: 1px solid #e2e8f0; /* border-gray-200 */
+            margin-bottom: 1.5rem; /* space-y-6 equivalent for individual items */
+        }
+        .publication-item:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-xl */
+            transition: all 0.3s ease-in-out;
+        }
+        .publication-item p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6; /* Improved readability */
+        }
+        .publication-item a {
+            color: #4f46e5; /* indigo-600 */
+            text-decoration: none;
+        }
+        .publication-item a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -51,37 +74,189 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">주요 논문</h2>
                 <div class="space-y-6">
-                    <!-- Publication 1 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                            A Novel Deep Learning Approach for X-ray and Neutron Image Fusion
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            <span class="font-medium">저자:</span> 김철수, 이영희, 홍길동
-                        </p>
-                        <p class="text-gray-700 mb-2">
-                            <span class="font-medium">저널/학회:</span> Journal of Advanced Imaging Technology, Vol. 10, No. 2, pp. 123-130
-                        </p>
-                        <p class="text-gray-700">
-                            <span class="font-medium">발행년도:</span> 2025
-                        </p>
+                    <div class="publication-item">
+                        <p class="text-gray-700">61. Ohsung Oh, Seung Wook Lee, "A flexible deep learning based interior tomography with detector offset ", Scientific Reports, 2025 (submitted).</p>
                     </div>
-                    <!-- Publication 2 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                            Enhancing Nondestructive Testing with AI-Powered Image Reconstruction
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            <span class="font-medium">저자:</span> 박지민, 홍길동
-                        </p>
-                        <p class="text-gray-700 mb-2">
-                            <span class="font-medium">저널/학회:</span> International Conference on Materials Science, Proceedings, pp. 45-50
-                        </p>
-                        <p class="text-gray-700">
-                            <span class="font-medium">발행년도:</span> 2024
-                        </p>
+                    <div class="publication-item">
+                        <p class="text-gray-700">60. Junyoung Son, Seung Wook Lee, "Wavelength-resolved neutron imaging technique for metal material analysis", Vol. 74, No. 3, pp. 278-285, New Physics: Sae Mulli 2024. (<a href="https://doi.org/10.3938/NPSM.74.278" target="_blank">https://doi.org/10.3938/NPSM.74.278</a>)</p>
                     </div>
-                    <!-- Add more publications as needed -->
+                    <div class="publication-item">
+                        <p class="text-gray-700">59. Seong Hak Jeong, Seho Lee, Seung Wook Lee, "Application of machine learning methods to optimize the sensitivity and resolution on phase contrast images from a grating interferometer", Vol. 74, No. 2, pp. 244-250, New Physics: Sae Mulli 2024. (<a href="http://dx.doi.org/10.3938/NPSM.74.244" target="_blank">http://dx.doi.org/10.3938/NPSM.74.244</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">58. Ohsung Oh, Daeseung Kim, Ho Kyung Kim, Seung Wook Lee, "Image reconstruction method in grating interferometer with phase stepping using grating position and dose fluctuation correction," Journal of Instrumentation 2023, 18 P07006 (<a href="https://doi.org/10.1088/1748-0221/18/07/P07006" target="_blank">https://doi.org/10.1088/1748-0221/18/07/P07006</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">57. Ohsung Oh, Youngju Kim, Daeseung Kim, Daniel S. Hussey, Seung Wook Lee, "Phase retrieval based on deep learning in grating interferometer," Scientific Reports (2022) 12: 6733 (<a href="https://doi.org/10.1038/s41598-022-10551-y" target="_blank">https://doi.org/10.1038/s41598-022-10551-y</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">56. Youngju Kim, Daeseung Kim, Jongyul Kim, Daniel S. Hussey, Mona Mirzaeimoghri, Dmitry A. Pushin, Seung Wook Lee, "Analysis of a silicon comb structure using an inverse Talbot-Lau neutron grating interferometer ", Scientific Reports 12, 3461(2022) (<a href="https://doi.org/10.1038/s41598-022-06409-y" target="_blank">https://doi.org/10.1038/s41598-022-06409-y</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">56. Youngju Kim, Jocopo Valsecchi, Ohsung Oh, Jongyul Kim, Seung Wook Lee, Francois Boue, Evelyne Luttons, Matteo Busi, Christopher Garvey, Markus Strobl, "Quantitative Neutron Dark-Field Imaging of Milk: A Feasibility Study", Applied Sciences 2022, 12(2), 833. (<a href="https://doi.org/10.3390/app12020833" target="_blank">https://doi.org/10.3390/app12020833</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">55. Jacopo Valsecchi, Youngju Kim, Seung Wook Lee, Katoro Saito, Joachim Kohbrecher, Christian Gruenzweig, Markus Strobl, "Towards spatially resolved magnetic small-angle scattering studies by polarized and polarization-analyzed neutron dark-field contrast imaging", Scientific Reports, 2021 (<a href="http://www.nature.com/articles/s41598-021-87335-3" target="_blank">http://www.nature.com/articles/s41598-021-87335-3</a>).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">54. Jacopo Valsecchi, Malgorzata G. Makowska, Christian Gruenzweig, Florian M. Piesa, Youngju Kim, Seung Wook Lee, Jeroen Plomp, Michael A. Thijis, and Markus Strobl, "Decomposing magnetic dark-field contrast in spin analyzed Talbot Lau interferometry a Stern-Gerlach experiment without spatial beam splitting", Physical Review Letters, 2021 (<a href="https://doi.org/10.1103/PhysRevLett.126.070401" target="_blank">https://doi.org/10.1103/PhysRevLett.126.070401</a>).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">53. Seho Lee, Ohsung Oh, Youngju Kim, Daeseung Kim, Junheok Won, and Seung Wook Lee, "Study on the dark-field imaging with laboratory source: Random stress variation analysis based on the X-ray grating interferometry", Review of Scientific Instruments, Vol. 92, Issue 1, 015103, 2021 (<a href="https://doi.org/10.1063/5.0011619" target="_blank">https://doi.org/10.1063/5.0011619</a>).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">52. Myungkeun Kim, Oh Sung Oh, Se Ho Lee, Seung Wook Lee, "Evaluation of machine learning methods to reduce stripe artifacts in the phase contrast Image due to line-Integration process", Journal of the Korean Society of Radiology, Vol. 14, No. 7, pp. 937-946, 2020 (<a href="https://doi.org/10.7742/jksr.2020.14.7.937" target="_blank">https://doi.org/10.7742/jksr.2020.14.7.937</a>).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">51. Youngju Kim, Daeseung Kim, Seho Lee, Jongyul Kim, Daniel S. Hussey, Seung Wook Lee, "Neutron grating interferometer with an analyzer grating based on a light blocker", Optics Express, Vol. 28, Issue 16, pp. 23284-23293, 2020 (<a href="https://doi.org/10.1364/OE.391678" target="_blank">https://doi.org/10.1364/OE.391678</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">50. Jacopo Valsecchi, Jonathan S. White, Marek Bartkowiak, Wolfgang Treimer, Youngju Kim, Seung Wook Lee, Denis M. Gokhfeld, Ralph P. Harti, Manuel Morgano, Markus Strobl, Christian Gruenzweig, "Visualization of compensating currents in type-II/1 superconductor via high field cooling", Applied Physics Letters, 116, 192602, 2020 (<a href="https://doi.org/10.1063/5.0004438" target="_blank">https://doi.org/10.1063/5.0004438</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">49. Seho Lee, Youngju Kim, Daniel Hussey, Ge Wang, Seung Wook Lee, "Deep learning for high-resolution and high-sensitivity interferometric phase contrast imaging", Scientific Reports 10, 9891, 2020 (<a href="https://doi.org/10.1038/s41598-020-66690-7" target="_blank">https://doi.org/10.1038/s41598-020-66690-7</a>).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">48. Youngju Kim, Valsechhi Jacopo, Jongyul Kim, Seung Wook Lee, Markus Strobl, "Symmetric Talbot-Lau neutron grating interferometry and incoherent scattering correction for quantitative dark-field imaging", Scientific Reports 9, 18973, 2019 (<a href="https://doi.org/10.1038/s41598-019-55420-3" target="_blank">doi:10.1038/s41598-019-55420-3</a>)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">47. Youngju Kim, Jongyul Kim, Daeseung Kim, Daniel S. Hussey, Seung Wook Lee, "Characterization of phase sensitivity, visibility, and resolution in symmetric neutron grating interferometer", Review of Scientific Instruments 90, 073704, 2019 (<a href="https://aip.scitation.org/doi/10.1063/1.5097486" target="_blank">Characterization of the phase sensitivity, visibility, and resolution in a symmetric neutron grating interferometer: Review of Scientific Instruments: Vol 90, No 7 (scitation.org)</a>).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">46. Youngju Kim, Jae-Hong Lim, Seung Wook Lee, "Observation of the Talbot Effect at Beamline 6C Bio Medical Imaging of the Pohang Light Source-II", Journal of the Korean Physical Society, vol. 74, no. 10, pp. 935-940, (2019).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">45. Youngju Kim, Jongyul Kim, Daniel S. Hussey, Oh Youl Kwon, Seung Wook Lee, "Visualization of Magnetic Domains in Electrical Steel using High-resolution Dark-field imaging", Korean Journal of Metals and Materials, 57(6), pp. 352-359 (2019) .</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">44. Tae-Eun Song, Seho Lee, Hee Han, Soonyoung Jung, Soo-Hyun Kim, Min Jun Kim, Seung Wook Lee, Chi Won Ahn, "Evaluation of grating realized via pulse current electroplating combined with atomic layer deposition as an x-ray grating interferomter", Journal of Vacuum Science & Technology A 37, 030903 (2019)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">43. Daeseung Kim, Youngju Kim, Seho Lee, Seung Wook Lee, "A Simulation study on the transfer characteristics of the Talbot pattern through scintillation screens in the grating interferometer", Journal of Radiological Science and Technology, 42(1), pp. 65-75 (2019)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">42. Seho Lee, Ohsung Oh, Youngju Kim, Insoo Kim, Jinkyu Kim, Seung Wook Lee, “The system design and characteristics of the 54.3 keV Talbot-Lau grating interferometry for industrial applications”, Journal of the Korean Physical Society, vol. 73, no. 12, pp. 1827-1833 (2018)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">41. Ohsung Oh, Seung Wook Lee, Ge Wang, “K-edge-based interior tomography”, Physics in Medicine & Biology, 165017 (2018)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">40. Youngju Kim, Jongyul Kim, Daeseung Kim, Daniel S. Hussey, Seung Wook Lee, “Feasibility evaluation of a neutron grating interferometer with an analyzer grating based on a structured scintillator”, Review of Scientific Instruments 89, 033701 (2018)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">39. Sunyoung Lee, Ohsung Oh, Seho Lee, Seung Wook Lee, “A preliminary study on measuring void fraction in a fuel rod assembly by using a X-ray imaging system”, Journal of the Korean Society of Radiology, vol. 11, No. 7, pp. 571-578 (2017)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">38. Seung Wook Lee, Youngju Kim, Seho Oh, Ohsung Oh, Yan Xi, Qingsong Yang, Wenxiang Cong, Ge Wang, “High resolution X-ray phase contrast imaging with a grating interferometer”, Journal of Korean Physical Society, vol. 71, pp. 538-542, (2017)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">37. Sungman Lee, Myungkook Moon, Jongyul Kim, Sang Jin Cho, Ji Hyung Lee, Chang Hee Lee, Seung Wook Lee, Takashi Ino, “In-situ compact He-3 neutron spin polarizer based on a magneto-static cavity with built-in NMR coils”, Journal of Physics: Conference Series 711, 012014 (2016).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">36. Seong Yong Hwang, Youngju Kim, Seung Wook Lee, “Evaluation of Residual Radioactivity and Dose Rate of a Target Assembly in an IBA Cyclotron”, Journal of Radiological Science and Technology, 39(4), 643-649 (2016)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">35. Jeongho Kim, Seung Wook Lee, Suhyun Lee, Jongyul Kim, Myung-kook Moon, “Design and Characterization of a Thermal Neutron Source Based on a 13 MeV Proton Cyclotron”, New Physics: Sae Mulli, vol. 66, No. 2 pp. 162-168 (2016)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">34. Chang Seouk Shin, Byoung-Seob Lee, Seyong Choi, Jang-Hee Yoon, Hyun Gyu Kim, Jung-Woo Ok, Jin Yong Park, Seong Jun Kim, Jungbae Bahng, Jonggi Hong, Seung Wook Lee, and Mi-Sook Won, “Nitrogen ion implantation into various materials using 28GHz electron cyclotron resonance ion source”, Review of Scientific Instrument, 87,02A713(2016)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">33. Hanseong Jeong, Youngju Kim, Ohohsung, Seho Lee, Hosang Jeon, Seung Wook Lee, “Analysis on the Positional Accuracy of the Non-orthogonal Two-pair kV Imaging Systems for Real-time Tumor Tracking Using XCAT”, Progress in Medical Physics, vol. 26, No. 3, pp. 143-512(2015)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">32. Youngju Kim, Ohsung Oh, Jongyul Kim, Seung Wook Lee, “Study on Talbot Pattern for Grating Interferometer”, Journal of Radiological Science and Technology, 38(1), 39-49. (2015)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">31. Ohsung Oh, Seung Wook Lee, “Comparison Study on Projection and Backprojection Methods for CT Simulation”, Journal of Radiological Science and Technology, 37(4), 323-329. (2015)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">30. Junesic Park, Se Hwan Park, Hee-Sung Shin, Ho-Dong Kim, Jungho Kim, Seung Wook Lee, Seung Kyu Lee, Yong Kyun Kim, “Effect of metal electrode on characteristics of gamma-irradiated silicon carbide detector”, Journal of Nuclear Science and Technology, vol 51, no. 4, pp 87-90, (2014)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">29. Takashi Ino, Gyuniun Kim, Manwoo Lee, Sungman Lee, Jongyul Kim, Seung Wook Lee, Vadim R. Skoy, ”Measurement of polarization of 3He with mobile polarized 3He neutron spin filter”, Nuclear Instruments and Methods in Physics Research A, vol. 323, pp. 26-pp. 32, (2014)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">28. Jongyul Kim, Seung Wook LEE, Gyuseong Cho, “Visibility evaluation of a neutron grating interferometer operated with a polychromatic thermal neutron beam”, Nuclear Instruments and Methods in Physics Research A”, vol. 746, pp. 26-pp. 32, (2014)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">27. Seung Wook Lee, Yu Zhou, Tie Zhou, Ming Jiang, Jongyul Kim, Chiwon Ahn, Alfred K. Louis, “ Visibility studies in grating-based neutron phase contrast and dark-field imaging by partial coherence theory”, Journal of the Korean Physical Society , vol. 64, No. 11, pp. 2093~2097 (2013).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">26. Jongyul Kim, Kye Hong Lee, Chang Hwy Lim, Taejeoo Kim, Chiwon Ahn, Gyuseong Cho, and Seung Wook Lee, “Fabrication and characterization of the source grating for visibility improvement of neutron phase imaging with gratigns”, Review of Scientific Instruments Vol. 84, 063705 (2013).</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">25. Sungman Lee, Jongyul Kim, Myungkook Moon, Kye Hong Lee, Seung Wook Lee, Takashi Ino, Vadim R. Skoy, Manwoo Lee, Guinyun Kim, “A compact Spin-exchange Optical Pumping System for He3 Polarization Based on a Solenoid Coil, a VBG Laser Diode, and a Cosine Theta RF Coil”, Journal of the Korean Physical society, Vol. 62, No. 3, pp. 419-423, February 2013.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">24. Yoshié OTAKE, Margie OLBINADO, Yoshichika SEKI, Katsuya HIROTA, Yutaka YAMAGATA, Jungmyoung JU, Tomohiro ADACHI, Shinya MORITA, Yoshihisa IWASHITA, Masahiro HINO, Masahiro ICHIKAWA, Masaaki KITAGUCHI, Toshio TAKAHASHI, Hideki YOSHIZAWA, Seung Wook LEE, Wataru YASHIRO, Atsushi MOMOSE, “Research toward the development of compact neutron interference imaging instrument with gratings”, Journal ofPhysics:ConferenceSeries 340 (2012) 012035 </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">23. Han Soo Kim, Jang Ho HA, Se Hwan PARK, Seung Wook LEE, Myungkook Moon, Gwang-min SUN, Cheol Ho LEE, “Characteristics of Fabricated Neutron Detectors Based on SiC Semiconductor”, Journal of Nuclear Science and Technology, Vol. 48, No. 10, pp. 1343-1347, 2011</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">22. Seung Wook Lee, Young Kwon Jun, Oh Yeoul Kwon, “A Neutron Dark-field imaging experiment with a neutron grating interferometer at a thermal neutron beam line at HANARO”, Journal of Korean Physical Society, vol. 58, no.4, 730-734, 2011.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">21. Seung Woook Lee, Ki Yeon Kim, Oh Yeoul Kwon, Nikolay Kardjilov, Martin Dawson, Andre Hilger, Ingo Manke, “Observation of Magnetic Domains in Insulation-Coated Electrical Steels by Neutron Dark-Field Imaging”, Applied Physics Express, No. 3, 106602 (2010)</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">20. Bo Kyung Cha, Jong Yul Kim, Tae Joo Kim, Yi Kyung Kim, Cheul Muu Sim, Seung Wook Lee, Gyuseong Cho, “Investigation of the Performance of Scintillator-based CMOS flat panel detectors for X-ray and thermal neutron imaging”, IEEE Transactions on Nuclear Science, vol. 57, No. 3, June 2010</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">19. TaeJoo Kim, JongRok Kim, CheulMuu Sim, SeungWoook Lee, Massound Kaviany, SangYoung Son, MooHwan Kim, “Experimental approaches for distribution and behavior of water in PEMFC under flow direction and differential pressure using neutron imaging technique”, Nuclear Instruments and Methods in Physics Research A 605 (2009) 16-20</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">18. Seung Wook Lee, Daniel Hussey, David Jacobson, Muhammad Arif, Cheul Muu Sim, "Development of the neutron phase imaging system using gratings at a monochromatic cold neutron beamline", Nuclear Instruments and Methods in Physics Research A 605 (2009) 16-20</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">17. Taejoo Kim, Yongmi Jung, Moohwan Kim, Cheulmuu Sim, Seungwook Lee and Jinsoo Jeon "Visualization of the internal water distribution at PEMFC using neutron imaging technology : Feasibility test at HANARO", Nuclear Engineering and Technology , Vol. 38, No. 4, pp.449-454, 2006.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">16. Ge Wang, Shiying Zhao, Hengyong Yu, CA Miller, PJ Abbas, BJ Gantz, SW Lee, JT Rubinstein; Design, analysis and simulation for the first clinical Micro-CT scanner; Academic Radiology, 12(4):511-525, Apr. 2005.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">15. Nikolay Kardjilov, Seung Wook Lee, Eberhard Lehman, In Cheol Lim, E. Steichele, Cheul Muu Sim, Peter Vontobel, "Improving the image contrast and resolution in the phase-contrast neutron radiography", Nuclear Instruments and Methods in Physics Research A 542, pp. 100-105, 2005. </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">14. Zhu J, Lee SW, Ye Y, Zhao S, Wang G: X-ray transform and 3D Radon transform for ellipsoids and tetrahedra. Journal of X-Ray Sci. and Tech. 12:215-229, 2004 </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">13. Cheul Muu Sim, Seung Wook Lee, Kwang Pyo Hong, Jong Kyu Cheon, Young Jin Kim, Joon Cheol Kim,Kohich Mochiki, " Requirements of neutron tomography standardization for industrial applications," Key Engineering Materials vol. 270-273 (2004), pp. 1376-1381.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">12. Seung Wook Lee, Joon Cheol Kim, Cheul Muu Sim, Kwang Pyo Hong, Jong Kyu Cheon, Chang Hee Lee, Young Jin Kim, " Development of a Neutron Tomography at HANARO ," Key Engineering Materials vol. 270-273 (2004), pp. 2278-2283.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">11. Nikolay Kardjilov, Seung Wook Lee, Eberhard Lehman, In Cheol Lim, E. Steichele, Cheul Muu Sim, Peter Vontobel, "Applied phase-contrast radiography with polychromatic thermal neutrons," Key Engineering Materials vol. 270-273 (2004), pp. 1330-1336.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">9. Seung Wook Lee, Ge Wang, "A Helical Half-Scan Cone-Beam CT Algorithm for Short Object Geometry in the Grangeat framework", Medical Physics, vol. 31, no. 1, 2004.</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">8. Ge Wang and Seung Wook Lee, “Grangeat-type and Katsevich-type algorithms for cone-beam CT”. Journal of CT Theory and Applications 12:45-55, 2003</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">7. Seung Wook Lee, Ge Wang, "A Grangeat-Type Half-Scan Algorithm for Cone-Beam CT", Medical Physics, vol. 30, no. 4, pp. 689-700, 2003. </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">6. Seung Wook Lee, Gyuseong Cho, Ge Wang, "Study on artifacts with implementation of the Grangeat formula", Medical Physics, vol. 29, no. 12, pp. 2871-2880, 2002. </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">5. Wang G, Jiang M, Lee SW, Liu H, Hoffman EA, “Cone-beam reconstruction for micro-CT,” Journal of CT Theory and Applications, vol. 11, pp. 7-11, 2002</p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">4. Tae-Hoon Lee, Gyuseong Cho, Hee Joon Kim, Seung Wook Lee, Wanno Lee, and Sang Hyo Han, "Analysis of 1/f Noise in CMOS Preamplifier with CDS Circuit", IEEE transactions on Nuclear Science, vol. 49, no.4, pp.1819-pp.1823, August 2002. </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">3. Seung Wook Lee, Ho Kyung Kim, Gyuseong Cho, Young Hoon Shin, Ye Yeon Won, "A 3D microtomographic system with CMOS image sensor.", IEEE transactions on Nuclear Science, vol. 48, no.4, pp. 1503-1505, August 2001. </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">2. H.K. Kim, G. Cho, S.W. Lee, Y.H. Shin, S.B.Wee, "Development and Evaluation of a Digital Radiographic System based on CMOS Image Sensor", IEEE transactions on Nuclear Science, vol. 48, no.3, pp. 662-666, June 2001. </p>
+                    </div>
+                    <div class="publication-item">
+                        <p class="text-gray-700">1. Seung Wook Lee, Gyuseong Cho, Yong Sub Cho, Byong Ho Choi, "Simulation of Neutral Beam Tomography Using Maximum Entropy Method", Nuclear Instrument and Method in Physics Research A 422, pp. 693-697, 1999. </p>
+                    </div>
                 </div>
             </div>
         </section>
