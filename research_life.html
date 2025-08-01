@@ -21,6 +21,35 @@
         .section-padding {
             padding: 80px 0; /* Consistent padding for sections */
         }
+        .category-heading {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #4338ca; /* indigo-700 */
+            border-bottom: 2px solid #a5b4fc; /* indigo-200 */
+            padding-bottom: 10px;
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+        }
+        .slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slider-image.active {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -47,24 +76,40 @@
 
     <main class="pt-24"> <!-- Adjusted padding-top for fixed header -->
         <!-- 연구라이프 (Research Life) Section -->
-        <section id="research-life" class="section-padding bg-gray-50 shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
+        <section id="research_life" class="section-padding bg-gray-50 shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">연구실 라이프</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                        <img src="https://placehold.co/400x250/d1d5db/374151?text=세미나" alt="세미나 사진" class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">정기 세미나</h3>
-                        <p class="text-gray-600">매주 최신 논문 리뷰 및 연구 진행 상황 공유를 위한 세미나를 진행합니다.</p>
+
+                <!-- 주간 회의 (Weekly Meetings) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 mb-8 flex flex-col md:flex-row items-center md:space-x-8">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">주간 회의</h3>
+                        <p class="text-gray-600 leading-relaxed">매주 금요일 연구 진행 상황 공유 및 피드백을 위해 회의를 진행합니다.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                        <img src="https://placehold.co/400x250/d1d5db/374151?text=워크숍" alt="워크숍 사진" class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">학술대회 및 워크숍 참여</h3>
-                        <p class="text-gray-600">국내외 학술대회에 적극적으로 참여하여 연구 성과를 발표하고 교류합니다.</p>
+                    <div class="md:w-1/2 mt-4 md:mt-0 slider-container" id="weekly-meeting-slider">
+                        <!-- 이미지들은 JavaScript로 동적 로드 -->
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                        <img src="https://placehold.co/400x250/d1d5db/374151?text=친목활동" alt="친목활동 사진" class="rounded-lg mb-4 w-full h-48 object-cover">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">친목 활동</h3>
-                        <p class="text-gray-600">연구 외적으로도 팀 빌딩 및 친목 도모를 위한 다양한 활동을 즐깁니다.</p>
+                </div>
+
+                <!-- 학술대회 및 워크숍 참여 (Conferences & Workshops) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 mb-8 flex flex-col md:flex-row items-center md:space-x-8">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">학술대회 및 워크숍 참여</h3>
+                        <p class="text-gray-600 leading-relaxed">국내외 학술대회에 적극적으로 참여하여 연구 성과를 발표하고 교류합니다.</p>
+                    </div>
+                    <div class="md:w-1/2 mt-4 md:mt-0 slider-container" id="conference-slider">
+                        <!-- 이미지들은 JavaScript로 동적 로드 -->
+                    </div>
+                </div>
+                
+                <!-- 친목 활동 (Social Activities) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col md:flex-row items-center md:space-x-8">
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">친목 활동</h3>
+                        <p class="text-gray-600 leading-relaxed">연구 외적으로도 팀 빌딩 및 친목 도모를 위한 다양한 활동을 즐깁니다.</p>
+                    </div>
+                    <div class="md:w-1/2 mt-4 md:mt-0 slider-container" id="social-slider">
+                        <!-- 이미지들은 JavaScript로 동적 로드 -->
                     </div>
                 </div>
             </div>
@@ -79,5 +124,55 @@
             <p class="text-gray-400">문의: <a href="mailto:seunglee@pusan.ac.kr" class="text-indigo-400 hover:underline">seunglee@pusan.ac.kr</a></p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const weeklyMeetingImages = [
+                'https://placehold.co/400x250/d1d5db/374151?text=주간회의1',
+                'https://placehold.co/400x250/d1d5db/374151?text=주간회의2',
+                'https://placehold.co/400x250/d1d5db/374151?text=주간회의3',
+                'https://placehold.co/400x250/d1d5db/374151?text=주간회의4'
+            ];
+            const conferenceImages = [
+                '오오성 박사 수상.jpg',
+                'IEEE 발표.jpg',
+                '엑스레이.jpg',
+                'xnpig.jpg'
+            ];
+            const socialImages = [
+                '즐겁다.png',
+                '끼얏호우.png',
+                '회식이다.jpg',
+                '샤브샤브.jpg'
+            ];
+
+            function createSlider(containerId, images) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+
+                images.forEach((src, index) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = `슬라이드 이미지 ${index + 1}`;
+                    img.className = 'slider-image';
+                    if (index === 0) {
+                        img.classList.add('active');
+                    }
+                    container.appendChild(img);
+                });
+
+                let currentIndex = 0;
+                setInterval(() => {
+                    const allImages = container.querySelectorAll('.slider-image');
+                    allImages[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % allImages.length;
+                    allImages[currentIndex].classList.add('active');
+                }, 5000); // 5초마다 이미지 변경
+            }
+
+            createSlider('weekly-meeting-slider', weeklyMeetingImages);
+            createSlider('conference-slider', conferenceImages);
+            createSlider('social-slider', socialImages);
+        });
+    </script>
 </body>
 </html>
