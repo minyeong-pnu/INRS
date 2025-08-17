@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구실 홈페이지 - 연구 장비</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for smooth scrolling and font */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+            color: #334155; /* Darker text */
+        }
+        .section-padding {
+            padding: 80px 0; /* Consistent padding for sections */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-white shadow-md fixed w-full z-50 top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">
+                <a href="index.html">INRS</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">인사말</a></li>
+                <li><a href="research_list.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구목록</a></li>
+                <li><a href="professor_intro.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">교수소개</a></li>
+                <li><a href="members.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">구성원</a></li>
+                <li><a href="projects.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">프로젝트</a></li>
+                <li><a href="research_life.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">연구라이프</a></li>
+                <li><a href="courses.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">수업</a></li>
+                <li><a href="publications.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">논문</a></li>
+                <li><a href="alumni.html" class="text-gray-700 hover:text-indigo-700 font-medium px-3 py-2 rounded-md transition duration-300">졸업생 현황</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24"> <!-- Adjusted padding-top for fixed header -->
+        <section id="equipment" class="section-padding bg-gray-50 shadow-sm rounded-lg mx-auto max-w-6xl my-8 p-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">연구 장비 상세 소개</h2>
+                <div class="flex flex-col space-y-12">
+                    <!-- 장비 소개 1: 고사양 워크스테이션 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">고사양 워크스테이션</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            본 연구실은 딥러닝 모델 학습과 대규모 데이터 분석을 위해 **NVIDIA 지포스 RTX 5090 32GB 그래픽 카드 2개**와 **총 128GB의 서버용 RAM**을 탑재한 고사양 워크스테이션을 운용하고 있습니다. 이 강력한 컴퓨팅 환경은 연구의 효율성을 극대화합니다.
+                        </p>
+                        <img src="https://placehold.co/600x400/d1d5db/374151?text=고사양+워크스테이션" alt="고사양 워크스테이션 사진" class="rounded-lg shadow-md w-full h-auto object-cover">
+                    </div>
+
+                    <!-- 장비 소개 2: X선 회절 간섭계 장비(talint edu) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">X선 회절 간섭계 장비(talint edu)</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            talint edu는 X선 회절 간섭계를 활용하여 물질의 미세 구조를 비파괴적으로 분석하는 데 사용되는 핵심 장비입니다.
+                            고해상도 영상 획득을 통해 재료 과학 및 의료 영상 연구에 기여합니다.
+                        </p>
+                        <img src="https://placehold.co/600x400/d1d5db/374151?text=talint+edu" alt="X선 회절 간섭계 장비 사진" class="rounded-lg shadow-md w-full h-auto object-cover">
+                    </div>
+                    
+                    <!-- 추가 장비 소개를 여기에 넣을 수 있습니다 -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-2">&copy; 2025 연구실. All rights reserved.</p>
+            <p class="text-gray-400">연구실: 기계관 119호 | 교수연구실: 기계관 911호</p>
+            <p class="text-gray-400">문의: <a href="mailto:seunglee@pusan.ac.kr" class="text-indigo-400 hover:underline">seunglee@pusan.ac.kr</a></p>
+        </div>
+    </footer>
+</body>
+</html>
