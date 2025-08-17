@@ -80,13 +80,16 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">연구실 라이프</h2>
 
-                <!-- 주간 회의 (Weekly Meetings) -->
+                <!-- 연구장비 (Research Equipment) -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 mb-8 flex flex-col md:flex-row items-center md:space-x-8">
                     <div class="md:w-1/2">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">주간 회의</h3>
-                        <p class="text-gray-600 leading-relaxed">매주 금요일 연구 진행 상황 공유 및 피드백을 위해 회의를 진행합니다.</p>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">연구 장비</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            연구실은 고사양 워크스테이션과 X선 회절 간섭계 장비(talint edu)를 보유하고 있습니다.
+                            이를 통해 고해상도 영상 분석 및 복잡한 데이터 처리가 효율적으로 이루어집니다.
+                        </p>
                     </div>
-                    <div class="md:w-1/2 mt-4 md:mt-0 slider-container" id="weekly-meeting-slider">
+                    <div class="md:w-1/2 mt-4 md:mt-0 slider-container" id="equipment-slider">
                         <!-- 이미지들은 JavaScript로 동적 로드 -->
                     </div>
                 </div>
@@ -126,23 +129,23 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const weeklyMeetingImages = [
-                'https://placehold.co/400x250/d1d5db/374151?text=주간회의1',
-                'https://placehold.co/400x250/d1d5db/374151?text=주간회의2',
-                'https://placehold.co/400x250/d1d5db/374151?text=주간회의3',
-                'https://placehold.co/400x250/d1d5db/374151?text=주간회의4'
+            const equipmentImages = [
+                '워크스테이션 내부.jpg',
+                'talint_edu_1.jpg',
+                'talint_edu_2.jpg',
+                'https://placehold.co/400x250/d1d5db/374151?text=장비사진4'
             ];
             const conferenceImages = [
                 '오오성 박사 수상.jpg',
+                'xnpig.jpg',
                 'IEEE 발표.jpg',
-                '엑스레이.jpg',
-                'xnpig.jpg'
+                '엑스레이.jpg'
             ];
             const socialImages = [
                 '회식이다.jpg',
                 '샤브샤브.jpg',
                 '동백섬덥다.jpg',
-                '워크스테이션 내부.jpg'
+                '관우따봉.jpg'
             ];
 
             function createSlider(containerId, images) {
@@ -169,12 +172,10 @@
                 }, 5000); // 5초마다 이미지 변경
             }
 
-            createSlider('weekly-meeting-slider', weeklyMeetingImages);
+            createSlider('equipment-slider', equipmentImages);
             createSlider('conference-slider', conferenceImages);
             createSlider('social-slider', socialImages);
         });
     </script>
 </body>
 </html>
-
-
