@@ -21,6 +21,21 @@
         .section-padding {
             padding: 80px 0; /* Consistent padding for sections */
         }
+        .image-container {
+            /* Ensures images maintain their aspect ratio and don't overflow */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .vertical-image {
+            max-height: 48rem; /* Tall image constraint */
+            width: auto;
+        }
+        .horizontal-image {
+            max-width: 100%; /* Wide image constraint */
+            height: auto;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -50,23 +65,29 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-indigo-800 mb-8 text-center">연구 장비 상세 소개</h2>
                 <div class="flex flex-col space-y-12">
-                    <!-- 장비 소개 1: 고사양 워크스테이션 -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">고사양 워크스테이션</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            본 연구실은 딥러닝 모델 학습과 대규모 데이터 분석을 위해 NVIDIA 지포스 RTX 5090 32GB 그래픽 카드 2개와 총 128GB의 서버용 RAM을 탑재한 고사양 워크스테이션을 운용하고 있습니다. 이 강력한 컴퓨팅 환경은 연구의 효율성을 극대화합니다.
-                        </p>
-                        <img src="워크스테이션 가동중.jpg" alt="고사양 워크스테이션 사진" class="rounded-lg shadow-md w-full max-h-96 object-cover">
+                    <!-- 장비 소개 1: 고사양 워크스테이션 (텍스트 왼쪽, 사진 오른쪽) -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex flex-col md:flex-row items-center md:space-x-8">
+                        <div class="md:w-1/2">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">고사양 워크스테이션</h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                본 연구실은 딥러닝 모델 학습과 대규모 데이터 분석을 위해 NVIDIA 지포스 RTX 5090 32GB 그래픽 카드 2개와 총 128GB의 서버용 RAM을 탑재한 고사양 워크스테이션을 운용하고 있습니다. 이 강력한 컴퓨팅 환경은 연구의 효율성을 극대화합니다.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 mt-4 md:mt-0 image-container">
+                            <img src="워크스테이션 가동중.jpg" alt="고사양 워크스테이션 사진" class="rounded-lg shadow-md vertical-image object-cover">
+                        </div>
                     </div>
 
-                    <!-- 장비 소개 2: X선 회절 간섭계 장비(talint edu) -->
+                    <!-- 장비 소개 2: X선 회절 간섭계 장비(talint edu) (텍스트 위, 사진 아래) -->
                     <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
                         <h3 class="text-2xl font-semibold text-gray-800 mb-3">X선 회절 간섭계 장비(talint edu)</h3>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             talint edu는 X선 회절 간섭계를 활용하여 물질의 미세 구조를 비파괴적으로 분석하는 데 사용되는 핵심 장비입니다.
                             고해상도 영상 획득을 통해 재료 과학 및 의료 영상 연구에 기여합니다.
                         </p>
-                        <img src="talint_edu_1.jpg" alt="X선 회절 간섭계 장비 사진" class="rounded-lg shadow-md w-full h-auto object-cover">
+                        <div class="image-container">
+                             <img src="talint_edu_1.jpg" alt="X선 회절 간섭계 장비 사진" class="rounded-lg shadow-md horizontal-image object-cover">
+                        </div>
                     </div>
                     
                     <!-- 추가 장비 소개를 여기에 넣을 수 있습니다 -->
