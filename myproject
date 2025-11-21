@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>FusionFormer Visualization - Cross-Modality Restoration</title>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #0b0e17;
+        margin: 0;
+        color: #e7ecf5;
+    }
+    .container {
+        width: 1400px;
+        margin: auto;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .section {
+        background: #111827;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        border: 1px solid #1f2937;
+    }
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .flex {
+        display: flex;
+        gap: 20px;
+    }
+
+    canvas {
+        background: #d9d9d9;
+        border-radius: 6px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background: #2563eb;
+        border-radius: 8px;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: 600;
+    }
+    .button:hover {
+        background: #1d4ed8;
+    }
+
+    #logBox {
+        height: 180px;
+        background: #0f172a;
+        border-radius: 8px;
+        padding: 10px;
+        font-family: monospace;
+        overflow-y: auto;
+        white-space: pre-line;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🔬 FusionFormer Visualization — Cross-Modality Restoration</h1>
+
+<!-- 1. Phantom Generation -->
+<div class="section">
+    <div class="section-title">1. Data Generation (Phantom)</div>
+    <div class="flex">
+        <div>
+            <p><b>HR X-ray (Guide)</b></p>
+            <canvas id="canvas_xray" width="300" height="300"></canvas>
+        </div>
+        <div>
+            <p><b>HR Neutron (GT)</b></p>
+            <canvas id="canvas_neutron" width="300" height="300"></canvas>
+        </div>
+    </div>
+    <div class="button" onclick="generatePhantom()">New Sample</div>
+</div>
+
+<!-- 2. Input Degradation -->
+<div class="section">
+    <div class="section-title">2. Input Degradation (LR Neutron)</div>
+    <canvas id="canvas_lr" width="350" height="350"></canvas>
+</div>
+
+<!-- 3. FusionFormer Logic -->
+<div class="section">
+    <div class="section-title">3. FusionFormer Logic (Animation)</div>
+    <canvas id="canvas_logic" width="800" height="200"></canvas>
+    <div class="button" onclick="runRestoration()">▶ Run Restoration</div>
+</div>
+
+<!-- 4. Result -->
+<div class="section">
+    <div class="section-title">4. Result & Validation</div>
+    <div class="flex">
+        <canvas id="canvas_result" width="350" height="350"></canvas>
+        <div style="flex:1;">
+            <p><b>System Log</b></p>
+            <div id="logBox"></div>
+            <p id="metrics"></p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+/* -------------------------------------------------------
+ * Utility
+ * ------------------------------------------------------- */
+function randomGrey() {
+    return Math.floor(Math.random()*80+150);
+}
+
+/* -------------------------------------------------------
+ * 1. Phantom Generation
+ * ------------------------------------------------------- */
+function generatePhantom() {
+    log("Generating new phantom sample...");
+
+    const cx = document.getElementById("canvas_xray").getContext("2d");
+    const cn = document.getElementById("canvas_neutron").getContext("2d");
+
+    cx.fillStyle = "#fff"; cx.fillRect(0,0,300,300);
+    cn.fillStyle = "#fff"; cn.fillRect(0,0,300,300);
+
+    // Draw random 3–5 shapes
+    const shapes = Math.floor(Math.random()*3)+3;
+    for (let i=0;i<shapes;i++){
+        let x = Math.random()*180+40;
+        let y = Math.random()*180+40;
+        let s = Math.random()*80+40;
+
+        // X-ray high contrast
+        cx.fillStyle = "rgba(80,80,80,1)";
+        cx.fillRect(x,y,s,s);
+
+        // Neutron low contrast
+        let g = randomGrey();
+        cn.fillStyle = `rgb(${g},${g},${g})`;
+        cn.fillRect(x,y,s,s);
+    }
+
+    degradeInput();
+}
+
+/* -------------------------------------------------------
+ * 2. Input Degradation (Gaussian + Downsample)
+ * ------------------------------------------------------- */
+function degradeInput() {
+    log("Applying degradation (blur, noise, downsample)...");
+
+    const src = document.getElementById("canvas_neutron");
+    const dstCtx = document.getElementById("canvas_lr").getContext("2d");
+    const temp = document.createElement("canvas");
+    temp.width = 128; temp.height = 128;
+
+    const tctx = temp.getContext("2d");
+    tctx.filter = "blur(4px)";
+    tctx.drawImage(src, 0,0,128,128);
+
+    // upsample with blur + noise
+    const final = document.createElement("canvas");
+    final.width = 350; final.height = 350;
+    const fctx = final.getContext("2d");
+    fctx.filter = "blur(3px)";
+    fctx.drawImage(temp,0,0,350,350);
+
+    // noise
+    const imgData = fctx.getImageData(0,0,350,350);
+    for (let i=0;i<imgData.data.length;i+=4) {
+        let n = (Math.random()*40)-20;
+        imgData.data[i]+=n; imgData.data[i+1]+=n; imgData.data[i+2]+=n;
+    }
+    fctx.putImageData(imgData,0,0);
+    dstCtx.drawImage(final,0,0);
+
+    log("LR neutron ready.");
+}
+
+/* -------------------------------------------------------
+ * 3. FusionFormer Logic Animation
+ * ------------------------------------------------------- */
+function drawLogic() {
+    const ctx = document.getElementById("canvas_logic").getContext("2d");
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(0,0,800,200);
+
+    ctx.fillStyle = "#93c5fd";
+    ctx.fillRect(40,60,120,80);
+    ctx.fillStyle = "#fff";
+    ctx.fillText("LR Neutron", 55, 50);
+
+    ctx.fillStyle = "#6ee7b7";
+    ctx.fillRect(200,60,120,80);
+    ctx.fillStyle = "#fff";
+    ctx.fillText("HR X-ray", 230, 50);
+
+    ctx.fillStyle = "#334155";
+    ctx.fillRect(380,45,140,110);
+    ctx.fillStyle = "#fff";
+    ctx.fillText("Patch Embed", 400, 40);
+
+    ctx.fillStyle = "#4b5563";
+    ctx.fillRect(560,45,160,110);
+    ctx.fillText("Transformer", 600, 40);
+}
+drawLogic();
+
+/* -------------------------------------------------------
+ * 4. Run Restoration (Fake Transformer Output)
+ * ------------------------------------------------------- */
+function runRestoration() {
+    log("Running FusionFormer...");
+
+    // Animate transformer logic
+    animateLogic();
+
+    // After animation, show restored output
+    setTimeout(()=> {
+        const lrCanvas = document.getElementById("canvas_lr");
+        const ctxOut = document.getElementById("canvas_result").getContext("2d");
+
+        // Restore = sharpen + denoise (simulated)
+        ctxOut.filter = "contrast(140%) brightness(120%)";
+        ctxOut.drawImage(lrCanvas,0,0,350,350);
+
+        log("Restoration completed.");
+        computeMetrics();
+    }, 1800);
+}
+
+/* -------------------------------------------------------
+ * Logic animation
+ * ------------------------------------------------------- */
+function animateLogic() {
+    const ctx = document.getElementById("canvas_logic").getContext("2d");
+
+    ctx.strokeStyle="#38bdf8";
+    ctx.lineWidth = 4;
+
+    let x=160;
+    let t = setInterval(()=>{
+        drawLogic();
+        ctx.beginPath();
+        ctx.moveTo(160,100);
+        ctx.lineTo(x,100);
+        ctx.stroke();
+        x+=8;
+        if (x>=540) clearInterval(t);
+    },30);
+}
+
+/* -------------------------------------------------------
+ * Fake PSNR/SSIM
+ * ------------------------------------------------------- */
+function computeMetrics() {
+    const ps = (Math.random()*12+28).toFixed(2);
+    const ss = (Math.random()*0.03+0.92).toFixed(3);
+    document.getElementById("metrics").innerHTML =
+        `<b>PSNR:</b> ${ps} dB &nbsp;&nbsp; <b>SSIM:</b> ${ss}`;
+}
+
+/* -------------------------------------------------------
+ * System log
+ * ------------------------------------------------------- */
+function log(msg){
+    const box = document.getElementById("logBox");
+    box.textContent += "> " + msg + "\n";
+    box.scrollTop = box.scrollHeight;
+}
+</script>
+
+</body>
+</html>
